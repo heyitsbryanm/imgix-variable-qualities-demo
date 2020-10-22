@@ -32,7 +32,7 @@ export default class App extends React.Component {
         />
         <Row
           title="Quality comparison"
-          description="Compare images of a different quality."
+          description="Compare images of a different quality. </br></br>Starting from left to right, this section showcases images with the parameters <code>q=1</code>,<code>q=25</code>,<code>q=50</code> and <code>q=100</code>."
           parameters={[`q=1`, `q=25`, `q=50`, `q=100`]}
           captions={[""]}
           // input settings
@@ -44,7 +44,7 @@ export default class App extends React.Component {
         />
         <Row
           title="DPR comparison"
-          description="Compare images by DPR (Device-Pixel-Resolution)"
+          description="Compare images by DPR (Device-Pixel-Resolution). </br></br> The CSS container sizes are locked to 285px width. Starting from left to right, this section showcases images with the parameters <code>dpr=1</code>,<code>dpr=2</code>,<codedpr=>3</code> and <code>dpr=4</code>."
           parameters={[`dpr=1`, `dpr=2`, `dpr=3`, `dpr=4`]}
           // input settings
           compress={true}
@@ -54,7 +54,7 @@ export default class App extends React.Component {
         />
         <Row
           title="Variable quality to resolution"
-          description="You can compare this to other resolutions"
+          description="This is a demo showcasing variable quality resolution. </br></br>This shows the method of offsetting higher <code>dpr</code> values by using lower <code>q</code> values."
           parameters={[`q=1&dpr=4`, `q=25&dpr=3`, `q=50&dpr=2`, `q=100&dpr=1`]}
           // input settings
           compress={true}
@@ -346,6 +346,7 @@ class Row extends React.Component {
     }
   };
 
+  
   render() {
     return (
       <section className="row page-width">
@@ -357,7 +358,7 @@ class Row extends React.Component {
             {this.props.title}
           </h1>
           <div className="large-6 medium-6 small-12 cell">
-            <p>{this.props.description || "Row description"}</p>
+            <p dangerouslySetInnerHTML={{__html: this.props.description}}></p>
             <Input
               compress={this.props.compress}
               dpr={this.props.dpr}
