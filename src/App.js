@@ -345,11 +345,16 @@ class Row extends React.Component {
       });
     }
   };
+  
+  createAnchor = () => {
+    let title = this.props.title.replace(/[-!$%^&*()+|~=`{}\[\]:";'<>?,.#@ \/]/g,'_');
+    return title.toLowerCase();
+  }
 
   
   render() {
     return (
-      <section className="row page-width">
+      <section className="row page-width" id={this.createAnchor()}>
         <div className="page-width-inner grid-x grid-margin-x">
           <div className="large-12 medium-12 small-12 cell">
             <div className="section_divider" />
