@@ -44,7 +44,7 @@ export default class App extends React.Component {
         />
         <Row
           title="DPR comparison"
-          description="Compare images by DPR (Device-Pixel-Resolution). </br></br> The CSS container sizes are locked to 285px width. Starting from left to right, this section showcases images with the parameters <code>dpr=1</code>,<code>dpr=2</code>,<codedpr=>3</code> and <code>dpr=4</code>."
+          description="Compare images by DPR (Device-Pixel-Resolution). </br></br> The CSS container sizes are locked to 285px width. Starting from left to right, this section showcases images with the parameters <code>dpr=1</code>,<code>dpr=2</code>,<code>dpr=3</code> and <code>dpr=4</code>."
           parameters={[`dpr=1`, `dpr=2`, `dpr=3`, `dpr=4`]}
           // input settings
           compress={true}
