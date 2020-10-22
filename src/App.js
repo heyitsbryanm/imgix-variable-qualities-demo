@@ -34,6 +34,7 @@ export default class App extends React.Component {
           title="Quality comparison"
           description="Compare images of a different quality."
           parameters={[`q=1`, `q=25`, `q=50`, `q=100`]}
+          captions={[""]}
           // input settings
           compress={true}
           autoFormat={true}
@@ -140,7 +141,7 @@ class Input extends React.Component {
   }
 
   _handleOptionsSubmit = e => {
-    event.preventDefault();
+    e.preventDefault();
     this.props._optionsState(this.state.innerOptionsState);
   };
   _handleOptionsChange = target => {
